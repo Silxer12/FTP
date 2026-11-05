@@ -1,24 +1,44 @@
 body {
-    /* disable scrolling */
-    overflow: hidden;
+    overflow: hidden; /* disable scrolling */
+
+    /* take up whole page */
+	height: 100vh;
     margin: 0;
+
+	/* ability to add the footer and still work */
+	display: flex;
+	flex-direction: column;
 }
 
 textarea {
-    /* add some padding to make it not cutoff a little at edges */
     box-sizing: border-box; 
-    padding: 0.5%;
+    padding: 0.5%; /* add some padding to make it not cutoff a little at edges */
 
-    /* take up all the body */
-    width: 100vw;
-    height: 100vh;
+    /* take up all the body that isnt the footer */
+    width: 100%;
+    flex: 1;
 
-    /* make it clean */
+    /* make it look neat and readable */
     resize: none;
     border: none;
     outline: none;
     tab-size: 4;
-
-    /* make it naturually readable */
     font-size: large;
+}
+
+footer {
+	padding: 10px 16px;
+	display: flex;
+	justify-content: space-between; /* might chage this later, dont really know if i like it */
+	align-items: center;
+
+	border-top: 1px solid #eeeeee;
+	font-size: 13px;
+}
+
+a,
+a:visited {
+    /* make the footer links look neat */
+	color: #5757ff;
+	text-decoration: none;
 }
