@@ -5,6 +5,7 @@ var content = localStorage.getItem("content") ?? "";
 var theme = localStorage.getItem("theme") ?? "light";
 
 textarea.value = content; // set content of textarea based on the loaded data
+document.documentElement.dataset.theme = theme; // set theme based on the loaded data
 
 // update content local storage every time the textarea is updated
 textarea.addEventListener('input', function(e) {
@@ -31,6 +32,22 @@ document.addEventListener('keydown', function(e) {
     e.preventDefault();
     
     saveAsContent();
+}});
+
+// Ctrl+Shift+D for switching theme
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'd') {
+    e.preventDefault();
+    
+    if (theme == "light") {
+        document.documentElement.dataset.theme = "dark";
+        localStorage.setItem("theme", "dark");
+        theme = "dark";
+    } else {
+        document.documentElement.dataset.theme = "light";
+        localStorage.setItem("theme", "light");
+        theme = "light";
+    }
 }});
 
 // shows the external save as window to save the text doc
