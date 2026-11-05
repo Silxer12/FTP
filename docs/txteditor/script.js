@@ -1,5 +1,16 @@
 const textarea = document.getElementById('textarea');
 
+// load existing local storage if availible
+var content = localStorage.getItem("content") ?? "";
+var theme = localStorage.getItem("theme") ?? "light";
+
+textarea.value = content; // set content of textarea based on the loaded data
+
+// update content local storage every time the textarea is updated
+textarea.addEventListener('input', function(e) {
+    localStorage.setItem("content", textarea.value);
+});
+
 // make tab actually type a tab
 textarea.addEventListener('keydown', function(e) {
     if (e.key === 'Tab') {
@@ -22,6 +33,7 @@ document.addEventListener('keydown', function(e) {
     saveAsContent();
 }});
 
+// shows the external save as window to save the text doc
 async function saveAsContent() {
     try {
         const handle = await window.showSaveFilePicker({
@@ -39,4 +51,4 @@ async function saveAsContent() {
     } catch (err) {
         console.log('ERR: Could not save file. ERR Message:', err);
     }
-}
+};
