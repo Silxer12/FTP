@@ -1,0 +1,24 @@
+body {
+    /* disable scrolling */
+    overflow: hidden;
+    margin: 0;
+}
+
+textarea {
+    /* add some padding to make it not cutoff a little at edges */
+    box-sizing: border-box; 
+    padding: 0.5%;
+
+    /* take up all the body */
+    width: 100vw;
+    height: 100vh;
+
+    /* make it clean */
+    resize: none;
+    border: none;
+    outline: none;
+    tab-size: 4;
+
+    /* make it naturually readable */
+    font-size: large;
+}
