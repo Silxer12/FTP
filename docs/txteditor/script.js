@@ -33,7 +33,7 @@ async function saveAsContent() {
         });
         
         const writable = await handle.createWritable();
-        await writable.write(textarea.textContent);
+        await writable.write(textarea.value);
         await writable.close();
         
     } catch (err) {
