@@ -2,20 +2,72 @@
 
 :root {
     color-scheme: light;
+
     --bg: #ffffff;
     --text: #000000;
+
+    --footer-bg: #ffffff;
+    --footer-text: #515151;
+
+    --link: #4a4aff;
 }
 
 :root[data-theme="dark"] {
     color-scheme: dark;
+
     --bg: #000000;
     --text: #ffffff;
+
+    --footer-bg: #000000;
+    --footer-text: #bababa;
+
+    --link: #8585ff;
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
         color-scheme: dark;
+
         --bg: #000000;
         --text: #ffffff;
+
+        --footer-bg: #000000;
+        --footer-text: #bababa;
+
+        --link: #8585ff;
     }
+}
+
+body {
+    background: var(--bg);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 0.5%;
+    box-sizing: border-box;
+    
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    border-top: 1px solid var(--footer-text);
+
+    font-size: 13px;
+    font-family: Helvetica, sans-serif;
+}
+
+a,
+a:visited {
+    /* make the footer links look neat */
+	color: var(--link);
+	text-decoration: none;
 }

@@ -2,7 +2,16 @@ const textarea = document.getElementById('textarea');
 
 // load existing local storage if availible
 var content = localStorage.getItem("content") ?? "";
-var theme = localStorage.getItem("theme") ?? "light";
+var theme = localStorage.getItem("theme") ?? "system";
+
+if (theme == "system") {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+        theme = "dark";
+    } else {
+        theme = "light";
+    }
+};
 
 textarea.value = content; // set content of textarea based on the loaded data
 document.documentElement.dataset.theme = theme; // set theme based on the loaded data

@@ -1,25 +1,15 @@
 :root {
     color-scheme: light;
 
-    --footer-bg: #ffffff;
-    --footer-text: #606060;
-
     --textarea-bg: #ffffff;
     --textarea-text: #222222;
-
-    --link: #5757ff;
 }
 
 :root[data-theme="dark"] {
     color-scheme: dark;
 
-    --footer-bg: #000000;
-    --footer-text: #bababa;
-
     --textarea-bg: #000000;
     --textarea-text: #ffffff;
-
-    --link: #8585ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,28 +59,4 @@ textarea {
 
     background-color: var(--textarea-bg);
     color: var(--textarea-text);
-}
-
-footer {
-	padding: 10px 16px;
-	display: flex;
-	justify-content: space-between; /* might chage this later, dont really know if i like it */
-	align-items: center;
-    
-    height: 1%;
-
-	border-top: 1px solid #808080;
-	font-size: 13px;
-
-    background-color: var(--footer-bg);
-    color: var(--footer-text);
-
-    font-family: Helvetica, sans-serif;
-}
-
-a,
-a:visited {
-    /* make the footer links look neat */
-	color: var(--link);
-	text-decoration: none;
 }
