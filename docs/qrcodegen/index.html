@@ -13,8 +13,43 @@
 <body>
     <main>
         <div class="settings">
-            SETTING PLACEHOLDER
+
+            <div class="setting-group">
+                <label for="content">Content</label>
+                <textarea id="content" placeholder="Enter text or URL"></textarea>
+            </div>
+
+            <div class="setting-group">
+                <label for="res">Resolution</label>
+                <select id="res">
+                    <option value="128">128 x 128</option>
+                    <option value="256" selected>256 x 256</option>
+                    <option value="512">512 x 512</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label for="ec">Error Correction</label>
+                <select id="ec">
+                    <option value="1">Low</option>
+                    <option value="0" selected>Medium</option>
+                    <option value="3">Quartile</option>
+                    <option value="2">High</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label for="colors">Light and Darks</label>
+                <input id="light" type="color" value="#ffffff">
+                <input id="dark" type="color" value="000000">
+            </div>
+
+            <div class="setting-group">
+                <button type="button" onclick="generateCode()" >Generate QR Code</button>
+            </div>
+
         </div>
+
         <div class="preview">
             <div id="qrcode"></div>
         </div>

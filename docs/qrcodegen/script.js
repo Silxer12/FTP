@@ -1,14 +1,21 @@
-const qrContainer = document.getElementById("qrcode");
+const qrContainer = document.getElementById('qrcode');
 
-function generateQRCode(content, ec, res) {
+const contentE = document.getElementById('content');
+const resE = document.getElementById('res');
+const ecE = document.getElementById('ec');
+const lightE = document.getElementById('light');
+const darkE = document.getElementById('dark');
+
+function generateCode() {
+
+    qrContainer.replaceChildren();
+
     qrcodeInstance = new QRCode(qrContainer, {
-        text: content,
-        width: res,
-        height: res,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : ec
+        text: contentE.value,
+        width: resE.value,
+        height: resE.value,
+        colorDark : darkE.value,
+        colorLight : lightE.value,
+        correctLevel : parseInt(ecE.value)
     });
 }
-
-generateQRCode("https://example.com", QRCode.CorrectLevel.Q, 300);
