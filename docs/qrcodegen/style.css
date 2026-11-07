@@ -1,0 +1,26 @@
+body {
+    overflow: hidden;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 100vw;
+    height: 94vh;
+}
+
+.settings {
+    grid-column: 1;
+    padding: 0.5%;
+    border-right: 1px solid var(--footer-text);
+}
+
+.preview {
+    grid-column: 2;
+    padding: 0.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
