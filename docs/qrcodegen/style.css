@@ -12,7 +12,7 @@ main {
 
 .settings {
     grid-column: 1;
-    padding: 0.5%;
+    padding: 2.5%;
     border-right: 1px solid var(--footer-text);
 }
 
@@ -23,4 +23,13 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#qrcode {
+    height: 90%;
+    width: 90%;
+}
+
+#qrcode img {
+    justify-self: center;
 }

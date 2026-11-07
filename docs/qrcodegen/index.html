@@ -6,6 +6,9 @@
     <title>FTP QR Code Generator</title>
     <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="../theme.css">
+
+    <!-- client side script for generating qr codes (no trakcing!) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <main>
@@ -13,7 +16,7 @@
             SETTING PLACEHOLDER
         </div>
         <div class="preview">
-            PREVIEW PLACEHOLDER
+            <div id="qrcode"></div>
         </div>
     </main>
 	<footer>
