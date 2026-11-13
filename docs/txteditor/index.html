@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTP TXT Editor</title>
     <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="../theme.css">
+	<link rel="stylesheet" href="../all.css">
 </head>
 <body>
-	<textarea id="textarea"></textarea>
+	<button class="settings-btn">
+		<img src="../settings-icon.png" alt="">
+	</button>
+
+	<main>
+		<textarea id="textarea" placeholder="Start typing here..."></textarea>
+	</main>
 
 	<footer>
 		<div>
-			<a href="#" id="themelink">Toggle Theme</a>
+			<a href="#" onclick="toggleTheme()">Toggle Theme</a>
 			·
 			<a href="../index.html">Tool Hub</a>
 			·
@@ -22,7 +28,8 @@
 			"For The People"
 		</span>
 	</footer>
+
 </body>
 <script src="script.js"></script>
-<script src="../theme.js"></script>
+<script src="../all.js"></script>
 </html>

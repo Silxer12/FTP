@@ -1,5 +1,3 @@
-const themelink = document.getElementById('themelink');
-
 var theme = localStorage.getItem("theme") ?? "system";
 
 if (theme == "system") {
@@ -32,10 +30,3 @@ document.addEventListener('keydown', function(e) {
     
     toggleTheme();
 }});
-
-// Link for switching theme
-themelink.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    toggleTheme();
-});
