@@ -1,4 +1,8 @@
+const settingsMenu = document.getElementById("settingsMenu");
+
 var theme = localStorage.getItem("theme") ?? "system";
+
+var settingsIsOpen = false;
 
 if (theme == "system") {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -30,3 +34,9 @@ document.addEventListener('keydown', function(e) {
     
     toggleTheme();
 }});
+
+function toggleSettings() {
+    settingsMenu.hidden = settingsIsOpen;
+
+    settingsIsOpen = !settingsIsOpen;
+}

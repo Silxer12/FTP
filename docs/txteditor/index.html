@@ -8,9 +8,15 @@
 	<link rel="stylesheet" href="../all.css">
 </head>
 <body>
-	<button class="settings-btn">
+	<button class="settings-btn" onclick="toggleSettings()">
 		<img src="../settings-icon.png" alt="">
 	</button>
+
+	<aside id="settingsMenu" class="side-menu" hidden>
+		<button id="closeBtn" class="close-btn" onclick="toggleSettings()">&times;</button>
+
+		<p>settings</p>
+	</aside>
 
 	<main>
 		<textarea id="textarea" placeholder="Start typing here..."></textarea>
