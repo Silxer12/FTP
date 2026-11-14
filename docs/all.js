@@ -1,19 +1,13 @@
 const settingsMenu = document.getElementById("settingsMenu");
+const themeSet = document.getElementById("theme");
 
 var theme = localStorage.getItem("theme") ?? "system";
 
-var settingsIsOpen = false;
+var settingsHidden = true;
 
-if (theme == "system") {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-        theme = "dark";
-    } else {
-        theme = "light";
-    }
-};
-
-document.documentElement.dataset.theme = theme; // set theme based on the loaded data
+// set theme based on the loaded data supporting system theme
+setTheme(theme); 
+themeSet.value = theme;
 
 function toggleTheme() {
     if (theme == "light") {
@@ -27,6 +21,36 @@ function toggleTheme() {
     }
 }
 
+function setTheme(themeSel) {
+    switch (themeSel) {
+        case "system":
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeToGo = "dark";
+                break;
+            } else {
+                themeToGo = "light";
+                break;
+            }
+
+        case "dark":
+            themeToGo = "dark";
+            break;
+
+        case "light":
+            themeToGo = "light";
+            break;
+        
+        default:
+            themeToGo = "light";
+            break;
+    }
+
+    document.documentElement.dataset.theme = themeToGo;
+    localStorage.setItem("theme", themeSel);
+    theme = themeSel;
+
+}
+
 // Ctrl+Shift+D for switching theme
 document.addEventListener('keydown', function(e) {
   if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'd') {
@@ -36,7 +60,19 @@ document.addEventListener('keydown', function(e) {
 }});
 
 function toggleSettings() {
-    settingsMenu.hidden = settingsIsOpen;
+    settingsHidden = !settingsHidden;
 
-    settingsIsOpen = !settingsIsOpen;
+    settingsMenu.hidden = settingsHidden;
 }
+
+document.addEventListener('keydown', function(e) {
+    if (e.key == 'Escape') {
+        settingsHidden = true;
+        settingsMenu.hidden = true;
+    }
+});
+
+// look for changes in theme setting
+themeSet.addEventListener('change', function(e) {
+    setTheme(e.target.value);
+});

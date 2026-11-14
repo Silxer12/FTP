@@ -13,9 +13,18 @@
 	</button>
 
 	<aside id="settingsMenu" class="side-menu" hidden>
-		<button id="closeBtn" class="close-btn" onclick="toggleSettings()">&times;</button>
+		<button id="closeBtn" class="close-btn" onclick="toggleSettings()">Close Settings</button>
 
-		<p>settings</p>
+		<div class="settings-section">
+			<label for="theme">Theme</label>
+
+			<select id="theme" class="setting-select">
+				<option value="system">System</option>
+				<option value="light">Light</option>
+				<option value="dark">Dark</option>
+			</select>
+
+		</div>
 	</aside>
 
 	<main>
@@ -24,15 +33,11 @@
 
 	<footer>
 		<div>
-			<a href="#" onclick="toggleTheme()">Toggle Theme</a>
-			·
 			<a href="../index.html">Tool Hub</a>
 			·
 			<a href="https://github.com/Silxer12/FTP">Source</a>
 		</div>
-		<span>
-			"For The People"
-		</span>
+		<span> "For The People" </span>
 	</footer>
 
 </body>
