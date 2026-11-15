@@ -26,6 +26,8 @@ function toggleTheme() {
         localStorage.setItem("theme", "light");
         theme = "light";
     }
+
+    themeSet.value = theme;
 }
 
 function setTheme(themeSel) {
