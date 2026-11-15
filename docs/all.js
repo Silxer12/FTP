@@ -68,9 +68,20 @@ document.addEventListener('keydown', function(e) {
     toggleTheme();
 }});
 
+// Ctrl+Shift+F for toggling footer
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'f') {
+    e.preventDefault();
+    
+    footer = !footer;
+    localStorage.setItem("footer", footer);
+    footerE.hidden = footer;
+    footerSet.checked = footer;
+    
+}});
+
 function toggleSettings() {
     settingsHidden = !settingsHidden;
-
     settingsMenu.hidden = settingsHidden;
 }
 
@@ -87,8 +98,7 @@ themeSet.addEventListener('change', function(e) {
 });
 
 footerSet.addEventListener('change', function(e) {
-    const checked = e.target.checked;
-    localStorage.setItem("footer", checked);
-    footerE.hidden = checked;
-    footer = checked;
+    footer = e.target.checked;
+    localStorage.setItem("footer", footer);
+    footerE.hidden = footer;
 });
