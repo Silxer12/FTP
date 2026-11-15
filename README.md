@@ -12,6 +12,7 @@ This project is directly from my hatred of "free" and "no sign up" websites that
 - [X] Settings
     - [X] Theme
     - [X] Footer Toggle
+- [ ] Favicon
 - [ ] Global and consistent CSS styling
 - [ ] Custom zoom controls (TXT Editor)
 - [ ] Dynamic tool loading from Repo
@@ -19,8 +20,11 @@ This project is directly from my hatred of "free" and "no sign up" websites that
 ### Tools:
 
 - [X] Text Editor
-- [ ] Counter
+- [ ] Simple Counter
+- [ ] Unit Converter
+- [ ] Simple Timer
 - [ ] QR Code Generator
+- [ ] General Random Generator (hash, password, uuid, etc.)
 
 ## FTP Guide:
 1. Never display ads
