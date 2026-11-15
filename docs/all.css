@@ -122,13 +122,14 @@ button {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    box-sizing: border-box;
 
     position: fixed;
     top: 0;
     right: 0;
 
-    width: 30vw;
-    height: 100vh;
+    width: min(320px, 30vw);
+    height: 100dvh; /* dvh used here for mobile users */
 
     z-index: 999;
     padding: 5px;

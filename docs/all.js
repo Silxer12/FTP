@@ -5,7 +5,7 @@ const themeSet = document.getElementById("themeSet");
 const footerSet = document.getElementById("footerSet");
 
 var theme = localStorage.getItem("theme") ?? "system";
-var footer = localStorage.getItem("footer") === "true" ?? false;
+var footer = localStorage.getItem("footer") === "true";
 
 var settingsHidden = true;
 
@@ -59,6 +59,14 @@ function setTheme(themeSel) {
     theme = themeSel;
 
 }
+
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+systemTheme.addEventListener('change', function() {
+    if (theme == "system") {
+        setTheme("system");
+    }
+});
 
 // Ctrl+Shift+D for switching theme
 document.addEventListener('keydown', function(e) {

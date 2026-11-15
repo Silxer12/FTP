@@ -21,6 +21,8 @@ textarea.addEventListener('keydown', function(e) {
         this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
 
         this.selectionStart = this.selectionEnd = start + 1;
+
+        localStorage.setItem("txteditor-content", textarea.value);
     }
 });
 
