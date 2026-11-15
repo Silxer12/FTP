@@ -1,13 +1,20 @@
 const settingsMenu = document.getElementById("settingsMenu");
-const themeSet = document.getElementById("theme");
+const footerE = document.getElementById("footer");
+
+const themeSet = document.getElementById("themeSet");
+const footerSet = document.getElementById("footerSet");
 
 var theme = localStorage.getItem("theme") ?? "system";
+var footer = localStorage.getItem("footer") === "true" ?? false;
 
 var settingsHidden = true;
 
-// set theme based on the loaded data supporting system theme
+// set theme based on the loaded data
 setTheme(theme); 
 themeSet.value = theme;
+
+footerE.hidden = footer;
+footerSet.checked = footer;
 
 function toggleTheme() {
     if (theme == "light") {
@@ -72,7 +79,14 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// look for changes in theme setting
+// look for changes in settings
 themeSet.addEventListener('change', function(e) {
     setTheme(e.target.value);
+});
+
+footerSet.addEventListener('change', function(e) {
+    const checked = e.target.checked;
+    localStorage.setItem("footer", checked);
+    footerE.hidden = checked;
+    footer = checked;
 });
