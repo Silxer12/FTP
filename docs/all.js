@@ -9,12 +9,28 @@ var footer = localStorage.getItem("footer") === "true";
 
 var settingsHidden = true;
 
-// set theme based on the loaded data
-setTheme(theme); 
-themeSet.value = theme;
+function loadLD() {
+    theme = localStorage.getItem("theme") ?? "system";
+    footer = localStorage.getItem("footer") === "true";
 
-footerE.hidden = footer;
-footerSet.checked = footer;
+    setTheme(theme); 
+    themeSet.value = theme;
+
+    footerE.hidden = footer;
+    footerSet.checked = footer;
+}
+
+function onDOMReady(callback) {
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", callback, { once: true });
+    } else {
+        callback();
+    }
+}
+
+onDOMReady(() => { loadLD() });                                     // load local data on page load
+window.addEventListener('pageshow', () => { onDOMReady(loadLD) });  // on page showing
+window.addEventListener('storage', loadLD);                         // when other tabs change settings
 
 function toggleTheme() {
     if (theme == "light") {
@@ -31,6 +47,8 @@ function toggleTheme() {
 }
 
 function setTheme(themeSel) {
+    let themeToGo;
+
     switch (themeSel) {
         case "system":
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
