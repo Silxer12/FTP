@@ -6,8 +6,8 @@ Any feedback related to the website or even the code greatly helps.
 
 This project is directly from my hatred of "free" and "no sign up" websites that: steal data, require sign up, push ads into your face, and are all around annoying to use.
 
-## To Do and Done:
-### Features:
+## To-Dos and -Dones
+### Features
 
 - [X] Settings
     - [X] Theme
@@ -16,7 +16,7 @@ This project is directly from my hatred of "free" and "no sign up" websites that
 - [ ] Dynamic tool loading from Repo
 - [ ] Favicon
 
-### Tools:
+### Tools
 
 - [X] Text Editor
 - [ ] Simple Counter
@@ -25,24 +25,24 @@ This project is directly from my hatred of "free" and "no sign up" websites that
 - [ ] QR Code Generator
 - [ ] General Random Generator (hash, password, uuid, etc.)
 
-## Shortcuts:
+## Shortcuts
 
 Ctrl is Cmd on Mac
 
-### Global:
+### Global
 
 | Keys | Function |
 | --- | --- |
 | Ctrl+Shift+D | Toggle Theme |
 | Ctrl+Shift+F | Toggle Footer |
 
-### TXT Editor:
+### TXT Editor
 
 | Keys | Function |
 | --- | --- |
 | Ctrl+(Shift+)S | Save as .txt file |
 
-## FTP Guide:
+## FTP Guide
 1. Never display ads
 2. Never use cookies
 3. Never ask to sign in
