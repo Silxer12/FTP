@@ -33,14 +33,14 @@ Ctrl is Cmd on Mac
 
 | Keys | Function |
 | --- | --- |
-| Ctrl+Shift+D, Toggle Theme |
-| Ctrl+Shift+F, Toggle Footer |
+| Ctrl+Shift+D | Toggle Theme |
+| Ctrl+Shift+F | Toggle Footer |
 
 ### TXT Editor:
 
 | Keys | Function |
 | --- | --- |
-| Ctrl+(Shift+)S, Save as .txt file |
+| Ctrl+(Shift+)S | Save as .txt file |
 
 ## FTP Guide:
 1. Never display ads
