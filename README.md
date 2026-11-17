@@ -12,8 +12,7 @@ This project is directly from my hatred of "free" and "no sign up" websites that
 - [X] Settings
     - [X] Theme
     - [X] Footer Toggle
-- [ ] Global and consistent CSS styling
-- [ ] Custom zoom controls (TXT Editor)
+- [X] Global and consistent CSS styling
 - [ ] Dynamic tool loading from Repo
 - [ ] Favicon
 
@@ -25,6 +24,23 @@ This project is directly from my hatred of "free" and "no sign up" websites that
 - [ ] Simple Timer
 - [ ] QR Code Generator
 - [ ] General Random Generator (hash, password, uuid, etc.)
+
+## Shortcuts:
+
+Ctrl is Cmd on Mac
+
+### Global:
+
+| Keys | Function |
+| --- | --- |
+| Ctrl+Shift+D, Toggle Theme |
+| Ctrl+Shift+F, Toggle Footer |
+
+### TXT Editor:
+
+| Keys | Function |
+| --- | --- |
+| Ctrl+(Shift+)S, Save as .txt file |
 
 ## FTP Guide:
 1. Never display ads
