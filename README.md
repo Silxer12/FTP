@@ -13,7 +13,12 @@ This project is directly from my hatred of "free" and "no sign up" websites that
     - [X] Theme
     - [X] Footer Toggle
 - [X] Global and consistent CSS styling
+<<<<<<< HEAD
 - [X] Favicon
+=======
+- [ ] Dynamic tool loading from Repo
+- [ ] Favicon
+>>>>>>> 6c3b108dc6b0563458d3fb409efa222d3f464f87
 
 ### Tools
 
