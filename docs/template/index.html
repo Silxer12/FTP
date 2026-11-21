@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTP Tool Template</title>
+
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../all.css">
+
+	<link rel="icon" type="image/x-icon" href="../favicon.png">
+</head>
+<body>
+	<button class="settings-btn" onclick="toggleSettings()">
+		<img src="../settings-icon.png" alt="Settings">
+	</button>
+
+	<aside id="settingsMenu" class="side-menu" hidden>
+		<button id="closeBtn" class="close-btn" onclick="toggleSettings()">Close Settings</button>
+
+		<div class="settings-section">
+			<label for="themeSet">Theme</label>
+
+			<select id="themeSet" class="setting-select">
+				<option value="system">System</option>
+				<option value="light">Light</option>
+				<option value="dark">Dark</option>
+			</select>
+		</div>
+
+        <div class="settings-section">
+			<label>
+                <input type="checkbox" id="footerSet">
+                Hide Footer
+            </label>
+		</div>
+	</aside>
+
+	<main>
+		Main Content
+	</main>
+
+	<footer id="footer">
+		<div>
+			<a href="../index.html">Tool Hub</a>
+			·
+			<a href="https://github.com/Silxer12/FTP">Source</a>
+		</div>
+		<span> "For The People" </span>
+	</footer>
+
+</body>
+<script src="script.js"></script>
+<script src="../all.js"></script>
+</html>
