@@ -13,8 +13,7 @@ This project is directly from my hatred of "free" and "no sign up" websites that
     - [X] Theme
     - [X] Footer Toggle
 - [X] Global and consistent CSS styling
-- [ ] Dynamic tool loading from Repo
-- [ ] Favicon
+- [X] Favicon
 
 ### Tools
 
