@@ -15,14 +15,24 @@ This project is directly from my hatred of "free" and "no sign up" websites that
 - [X] Global and consistent CSS styling
 - [X] Favicon
 
-### Tools
+### Tools (No Particular Order)
 
 - [X] Text Editor
-- [ ] Simple Counter
+- [ ] FPS Counter
+- [ ] Counter
 - [ ] Unit Converter
-- [ ] Simple Timer
+- [ ] Base Converter
+- [ ] Timer/Stopwatch
 - [ ] QR Code Generator
 - [ ] General Random Generator (hash, password, uuid, etc.)
+- [ ] Random Picker (Fair/Weighted)
+- [ ] Soundboard
+- [ ] Bill Splitter
+- [ ] Metadata viewer/editor
+- [ ] Calculator
+- [ ] Regex Tester
+- [ ] Color Picker
+- [ ] Markdown Previewer
 
 ## Shortcuts
 
@@ -39,7 +49,7 @@ Ctrl is Cmd on Mac
 
 | Keys | Function |
 | --- | --- |
-| Ctrl+(Shift+)S | Save as .txt file |
+| Ctrl+S | Save as .txt file |
 
 ## FTP Guide
 1. Never display ads
