@@ -9,6 +9,9 @@ var footer = localStorage.getItem("footer") === "true";
 
 var settingsHidden = true;
 
+document.getElementById("settingsBtn").addEventListener("click", toggleSettings);
+document.getElementById("closeBtn").addEventListener("click", toggleSettings);
+
 function loadLD() {
     theme = localStorage.getItem("theme") ?? "system";
     footer = localStorage.getItem("footer") === "true";
