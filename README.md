@@ -28,11 +28,19 @@ This project is directly from my hatred of "free" and "no sign up" websites that
 - [ ] Random Picker (Fair/Weighted)
 - [ ] Soundboard
 - [ ] Bill Splitter
-- [ ] Metadata viewer/editor
+- [ ] Metadata Editor
 - [ ] Calculator
 - [ ] Regex Tester
 - [ ] Color Picker
 - [ ] Markdown Previewer
+- [ ] CSV Editor
+- [ ] URL Encode/Decode
+- [ ] Unix Converter
+- [ ] Lorem Ipsum Generator
+- [ ] CSS Helper (borders, shadows, etc)
+- [ ] List Maker
+- [ ] Audio and Video trimmer
+- [ ] JSON Formatter
 
 ## Shortcuts
 
@@ -50,6 +58,7 @@ Ctrl is Cmd on Mac
 | Keys | Function |
 | --- | --- |
 | Ctrl+S | Save as .txt file |
+| Ctrl+O | Import .txt file |
 
 ## FTP Guide
 1. Never display ads
