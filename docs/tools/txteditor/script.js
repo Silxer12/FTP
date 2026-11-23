@@ -1,16 +1,18 @@
 const textarea = document.getElementById('textarea');
+const importOverlay = document.getElementById("importOverlay");
 
-// load existing content if availible
+// === LOCALSTORAGE ===
+
 var content = localStorage.getItem("txteditor-content") ?? "";
 
-textarea.value = content; // set content of textarea based on the loaded data
+textarea.value = content;
 
-// update content local storage every time the textarea is updated
 textarea.addEventListener('input', function(e) {
     localStorage.setItem("txteditor-content", textarea.value);
 });
 
-// make tab actually type a tab
+// === FUNCTIONALITY ===
+
 textarea.addEventListener('keydown', function(e) {
     if (e.key === 'Tab') {
         e.preventDefault();
@@ -26,7 +28,8 @@ textarea.addEventListener('keydown', function(e) {
     }
 });
 
-// make text save in a new doc when Crtl+S-ing
+// === SAVING ===
+
 document.addEventListener('keydown', function(e) {
   if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
     e.preventDefault();
@@ -34,7 +37,6 @@ document.addEventListener('keydown', function(e) {
     saveAsContent();
 }});
 
-// shows the external save as window to save the text doc
 async function saveAsContent() {
     try {
         const handle = await window.showSaveFilePicker({
@@ -53,3 +55,56 @@ async function saveAsContent() {
         console.log('ERR: Could not save file. ERR Message:', err);
     }
 };
+
+// === IMPORTING ===
+
+function shouldImport(event) {
+    const files = Array.from(event.dataTransfer?.files || []);
+    if (files.length !== 1) return false;
+
+    const file = files[0];
+    const hasExtension = file.name.toLowerCase().endsWith('.txt');
+    const hasMime = file.type === 'text/plain' || file.type === '';
+
+    return hasExtension && hasMime;
+}
+
+function canDrop(event) {
+    if (!event.dataTransfer || !Array.from(event.dataTransfer.types).includes('Files')) {
+        return false;
+    }
+
+    const items = Array.from(event.dataTransfer.items).filter(
+        (item) => item.kind === 'file'
+    );
+
+    if (items.length !== 1) return false;
+
+    return items[0].type === 'text/plain' || items[0].type === '';
+}
+
+textarea.addEventListener('dragenter', (event) => {
+  event.preventDefault();
+  importOverlay.hidden = !canDrop(event);
+});
+
+textarea.addEventListener('dragover', (event) => {
+  event.preventDefault();
+});
+
+textarea.addEventListener('dragleave', (event) => {
+  event.preventDefault();
+  importOverlay.hidden = true;
+});
+
+textarea.addEventListener('drop', async (event) => {
+    event.preventDefault();
+    importOverlay.hidden = true;
+
+    if (!shouldImport(event)) return;
+
+    const text = await event.dataTransfer.files[0].text();
+    textarea.value = text;
+
+    localStorage.setItem("txteditor-content", textarea.value);
+})

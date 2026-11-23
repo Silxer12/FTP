@@ -30,3 +30,22 @@ textarea {
     background-color: var(--textarea-bg);
     color: var(--textarea-text);
 }
+
+.import-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    z-index: 9999;
+
+    pointer-events: none;
+    font-size: 5vw;
+}
+
+.import-overlay[hidden] {
+    display: none;
+}
