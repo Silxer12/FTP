@@ -67,7 +67,7 @@ function shouldImport(event) {
     const hasMime = file.type === 'text/plain' || file.type === '';
 
     return hasExtension && hasMime;
-}
+};
 
 function canDrop(event) {
     if (!event.dataTransfer || !Array.from(event.dataTransfer.types).includes('Files')) {
@@ -81,30 +81,58 @@ function canDrop(event) {
     if (items.length !== 1) return false;
 
     return items[0].type === 'text/plain' || items[0].type === '';
-}
+};
 
-textarea.addEventListener('dragenter', (event) => {
-  event.preventDefault();
-  importOverlay.hidden = !canDrop(event);
+textarea.addEventListener('dragenter', (e) => {
+  e.preventDefault();
+  importOverlay.hidden = !canDrop(e);
 });
 
-textarea.addEventListener('dragover', (event) => {
-  event.preventDefault();
+textarea.addEventListener('dragover', (e) => {
+  e.preventDefault();
 });
 
-textarea.addEventListener('dragleave', (event) => {
-  event.preventDefault();
+textarea.addEventListener('dragleave', (e) => {
+  e.preventDefault();
   importOverlay.hidden = true;
 });
 
-textarea.addEventListener('drop', async (event) => {
-    event.preventDefault();
+textarea.addEventListener('drop', async (e) => {
+    e.preventDefault();
     importOverlay.hidden = true;
 
-    if (!shouldImport(event)) return;
+    if (!shouldImport(e)) return;
 
-    const text = await event.dataTransfer.files[0].text();
+    const text = await e.dataTransfer.files[0].text();
     textarea.value = text;
 
     localStorage.setItem("txteditor-content", textarea.value);
-})
+});
+
+document.addEventListener('keydown', async (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'o') {
+    e.preventDefault();
+
+    try {
+        const [fileHandle] = await window.showOpenFilePicker({
+            types: [
+                {
+                    description: 'Text File',
+                    accept: { 'text/plain': ['.txt'] },
+                },
+            ],
+            multiple: false,
+        });
+
+        const file = await fileHandle.getFile();
+        const text = await file.text();
+
+        textarea.value = text;
+        localStorage.setItem("txteditor-content", textarea.value);
+    } catch (err) {
+        if (err.name !== 'AbortError') {
+            console.error('ERR: Could not import file. ERR Message:', err);
+        }
+    }
+  }
+});
