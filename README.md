@@ -58,7 +58,7 @@ Ctrl is Cmd on Mac
 | Keys | Function |
 | --- | --- |
 | Ctrl+S | Save as .txt file |
-| Ctrl+O | Import .txt file |
+| Ctrl+O/Drag+Drop | Import .txt file |
 
 ## FTP Guide
 1. Never display ads
