@@ -14,6 +14,8 @@ This project is directly from my hatred of "free" and "no sign up" websites that
     - [X] Footer Toggle
 - [X] Global and consistent CSS styling
 - [X] Favicon
+- [ ] Search Tools through name or category
+- [ ] Tool specific instructions/information
 
 ### Tools (No Particular Order)
 
@@ -41,24 +43,11 @@ This project is directly from my hatred of "free" and "no sign up" websites that
 - [ ] List Maker
 - [ ] Audio and Video trimmer
 - [ ] JSON Formatter
-
-## Shortcuts
-
-Ctrl is Cmd on Mac
-
-### Global
-
-| Keys | Function |
-| --- | --- |
-| Ctrl+Shift+D | Toggle Theme |
-| Ctrl+Shift+F | Toggle Footer |
-
-### TXT Editor
-
-| Keys | Function |
-| --- | --- |
-| Ctrl+S | Save as .txt file |
-| Ctrl+O/Drag+Drop | Import .txt file |
+- [ ] CPS Tester
+- [ ] YT to audio or video download
+- [ ] Tuner
+- [ ] Dice Roller
+- [ ] Reaction 
 
 ## FTP Guide
 1. Never display ads
